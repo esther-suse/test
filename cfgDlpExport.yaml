@@ -9,6 +9,12 @@ items:
     sensor:
       comment: ""
       name: fed.s1
-      rules: []
+      rules:
+      - name: r1
+        patterns:
+        - context: packet
+          key: pattern
+          op: regex
+          value: wwww
 kind: List
 metadata: {}
