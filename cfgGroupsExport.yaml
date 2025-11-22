@@ -10,10 +10,20 @@ items:
       settings: []
       status: true
     egress:
+    - action: allow
+      applications:
+      - any
+      name: fed.nodes-egress-0
+      ports: any
+      priority: 0
+      selector:
+        comment: ""
+        name: fed.nodes
+        original_name: ""
     - action: deny
       applications:
       - any
-      name: external-egress-0
+      name: external-egress-1
       ports: any
       priority: 0
       selector:
