@@ -4,108 +4,32 @@ items:
   kind: NvClusterSecurityRule
   metadata:
     creationTimestamp: null
-    name: fed.external
-  spec:
-    egress: []
-    file: []
-    ingress:
-    - action: deny
-      applications:
-      - any
-      name: external-ingress-0
-      ports: any
-      priority: 0
-      selector:
-        comment: ""
-        criteria:
-        - key: container
-          op: =
-          value: myServer
-        name: fed.test
-        original_name: ""
-    process: []
-    response: null
-    target:
-      policymode: N/A
-      selector:
-        comment: ""
-        name: external
-        original_name: ""
-- apiVersion: neuvector.com/v1
-  kind: NvClusterSecurityRule
-  metadata:
-    creationTimestamp: null
-    name: fed.containers
-  spec:
-    dlp:
-      settings: []
-      status: true
-    egress: []
-    file: []
-    ingress: []
-    process: []
-    response: null
-    target:
-      policymode: N/A
-      selector:
-        comment: ""
-        criteria:
-        - key: container
-          op: =
-          value: '*'
-        name: fed.containers
-        original_name: ""
-    waf:
-      settings: []
-      status: true
-- apiVersion: neuvector.com/v1
-  kind: NvClusterSecurityRule
-  metadata:
-    creationTimestamp: null
-    name: fed.nodes
-  spec:
-    egress: []
-    file: []
-    ingress:
-    - action: allow
-      applications:
-      - any
-      name: fed.nodes-ingress-1
-      ports: any
-      priority: 0
-      selector:
-        comment: ""
-        criteria:
-        - key: container
-          op: =
-          value: myServer
-        name: fed.test
-        original_name: ""
-    process: []
-    response:
-    - actions:
-      - webhook
-      conditions:
-      - type: level
-        value: Critical
-      event: cve-report
-      policy_name: fed
-    target:
-      policymode: N/A
-      selector:
-        comment: ""
-        name: fed.nodes
-        original_name: ""
-- apiVersion: neuvector.com/v1
-  kind: NvClusterSecurityRule
-  metadata:
-    creationTimestamp: null
     name: fed.test
   spec:
     dlp:
       settings: []
       status: true
-    egress: []
+    egress:
+    - action: allow
+      applications:
+      - any
+      name: fed.nodes-egress-0
+      ports: any
+      priority: 0
+      selector:
+        comment: ""
+        name: fed.nodes
+        original_name: ""
+    - action: deny
+      applications:
+      - any
+      name: external-egress-1
+      ports: any
+      priority: 0
+      selector:
+        comment: ""
+        name: external
+        original_name: ""
     file: []
     ingress: []
     process: []
@@ -118,6 +42,9 @@ items:
         - key: container
           op: =
           value: myServer
+        - key: image
+          op: =
+          value: '*nginx*'
         grp_band_width: 0
         grp_sess_cur: 0
         grp_sess_rate: 0
