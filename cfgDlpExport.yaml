@@ -1,0 +1,14 @@
+apiVersion: v1
+items:
+- apiVersion: neuvector.com/v1
+  kind: NvDlpSecurityRule
+  metadata:
+    creationTimestamp: null
+    name: fed.dlp-1
+  spec:
+    sensor:
+      comment: ""
+      name: fed.dlp-1
+      rules: []
+kind: List
+metadata: {}
