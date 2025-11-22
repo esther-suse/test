@@ -4,11 +4,11 @@ items:
   kind: NvDlpSecurityRule
   metadata:
     creationTimestamp: null
-    name: fed.dlp-1
+    name: fed.s1
   spec:
     sensor:
       comment: ""
-      name: fed.dlp-1
+      name: fed.s1
       rules: []
 kind: List
 metadata: {}
