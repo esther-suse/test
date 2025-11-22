@@ -42,6 +42,9 @@ items:
         - key: container
           op: =
           value: myServer
+        - key: image
+          op: =
+          value: '*nginx*'
         grp_band_width: 0
         grp_sess_cur: 0
         grp_sess_rate: 0
