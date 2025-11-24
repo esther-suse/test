@@ -6,4 +6,9 @@ metadata:
 spec:
   fed_config:
     name: fed
-    webhooks: []
+    webhooks:
+    - enable: true
+      name: fed.webhook
+      type: ""
+      url: https://test123.com
+      use_proxy: false
