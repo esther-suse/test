@@ -1,0 +1,29 @@
+apiVersion: neuvector.com/v1
+kind: NvAdmissionControlSecurityRule
+metadata:
+  creationTimestamp: null
+  name: fed
+spec:
+  rules:
+  - action: deny
+    containers:
+    - containers
+    conversion_id_ref: 100001
+    criteria:
+    - name: imageRegistry
+      op: containsAny
+      path: imageRegistry
+      value: https://quay.io/
+    disabled: false
+    rule_mode: ""
+  - action: deny
+    containers:
+    - containers
+    conversion_id_ref: 100002
+    criteria:
+    - name: labels
+      op: containsAll
+      path: labels
+      value: sdsffghj
+    disabled: false
+    rule_mode: ""
