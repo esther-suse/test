@@ -27,3 +27,14 @@ spec:
       value: testttyt234
     disabled: false
     rule_mode: ""
+  - action: deny
+    containers:
+    - containers
+    conversion_id_ref: 100003
+    criteria:
+    - name: image
+      op: containsAny
+      path: image
+      value: https://quay.io/
+    disabled: false
+    rule_mode: ""
