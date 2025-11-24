@@ -13,7 +13,7 @@ spec:
     - name: annotations
       op: containsAll
       path: annotations
-      value: fhghj
+      value: ewrtyrty
     disabled: false
     rule_mode: ""
   - action: deny
@@ -24,6 +24,6 @@ spec:
     - name: labels
       op: containsAll
       path: labels
-      value: sdsffghj
+      value: testttyt234
     disabled: false
-    rule_mode: protect
+    rule_mode: ""
