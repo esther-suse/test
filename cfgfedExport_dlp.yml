@@ -16,5 +16,21 @@ items:
           key: pattern
           op: regex
           value: wwww
+- apiVersion: neuvector.com/v1
+  kind: NvDlpSecurityRule
+  metadata:
+    creationTimestamp: null
+    name: fed.s2
+  spec:
+    sensor:
+      comment: ""
+      name: fed.s2
+      rules:
+      - name: r1
+        patterns:
+        - context: packet
+          key: pattern
+          op: regex
+          value: ssddsfsdfdsfdsd
 kind: List
 metadata: {}
