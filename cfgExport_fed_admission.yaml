@@ -26,4 +26,4 @@ spec:
       path: labels
       value: testttyt234
     disabled: false
-    rule_mode: ""
+    rule_mode: protect
