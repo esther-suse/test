@@ -8,6 +8,21 @@ spec:
   - action: deny
     containers:
     - containers
+    conversion_id_ref: 100001
+    criteria:
+    - name: annotations
+      op: containsAll
+      path: annotations
+      value: ewrtyrty
+    - name: imageScanned
+      op: =
+      path: imageScanned
+      value: "true"
+    disabled: false
+    rule_mode: ""
+  - action: deny
+    containers:
+    - containers
     conversion_id_ref: 100002
     criteria:
     - name: labels
@@ -19,11 +34,11 @@ spec:
   - action: deny
     containers:
     - containers
-    conversion_id_ref: 100001
+    conversion_id_ref: 100003
     criteria:
-    - name: annotations
-      op: containsAll
-      path: annotations
-      value: ewrtyrty
+    - name: imageSigned
+      op: =
+      path: imageSigned
+      value: "false"
     disabled: false
     rule_mode: ""
