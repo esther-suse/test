@@ -10,18 +10,18 @@ items:
       comment: ""
       name: fed.dlp.s1
       rules:
-      - name: r1
-        patterns:
-        - context: packet
-          key: pattern
-          op: regex
-          value: asadsfgdfgfh
       - name: r2
         patterns:
         - context: packet
           key: pattern
           op: regex
           value: eretyuio
+      - name: r1
+        patterns:
+        - context: packet
+          key: pattern
+          op: regex
+          value: asadsfgdfgfh
 - apiVersion: neuvector.com/v1
   kind: NvDlpSecurityRule
   metadata:
