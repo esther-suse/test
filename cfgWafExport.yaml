@@ -4,17 +4,49 @@ items:
   kind: NvWafSecurityRule
   metadata:
     creationTimestamp: null
-    name: fed.sensor.log4shell
+    name: fed.sensor.spring4shell
   spec:
     sensor:
-      comment: Log4Shell - 0Day RCE exploit found in Log4j
-      name: fed.sensor.log4shell
+      comment: Spring4Shell - 0day RCE Vulnerability found in Java Spring Framework
+      name: fed.sensor.spring4shell
       rules:
-      - name: rule.log4shell
+      - name: rule.spring4shell
         patterns:
-        - context: header
+        - context: body
           key: pattern
           op: regex
-          value: \$\{((\$|\{|lower|upper|[a-zA-Z]|\:|\-|\})*[jJ](\$|\{|lower|upper|[a-zA-Z]|\:|\-|\})*[nN](\$|\{|lower|upper|[a-zA-Z]|\:|\-|\})*[dD](\$|\{|lower|upper|[a-zA-Z]|\:|\-|\})*[iI])((\$|\{|lower|upper|[a-zA-Z]|\:|\-|\}|\/)|[ldapLDAPrmiRMInsNShtHTcobCOB])*.*
+          value: if.*equals.*request\.getParameter.*pwd.*getRuntime.*exec.*request\.getParameter.*cmd.*getInputStream.*read.*print.*classLoader
+- apiVersion: neuvector.com/v1
+  kind: NvWafSecurityRule
+  metadata:
+    creationTimestamp: null
+    name: fed.waf.s1
+  spec:
+    sensor:
+      comment: waf sensor
+      name: fed.waf.s1
+      rules:
+      - name: r1
+        patterns:
+        - context: packet
+          key: pattern
+          op: regex
+          value: "234567"
+- apiVersion: neuvector.com/v1
+  kind: NvWafSecurityRule
+  metadata:
+    creationTimestamp: null
+    name: fed.waf.s2
+  spec:
+    sensor:
+      comment: ""
+      name: fed.waf.s2
+      rules:
+      - name: r1
+        patterns:
+        - context: packet
+          key: pattern
+          op: regex
+          value: dfdghjhj
 kind: List
 metadata: {}
