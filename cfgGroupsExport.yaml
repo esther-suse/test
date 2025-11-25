@@ -4,26 +4,16 @@ items:
   kind: NvClusterSecurityRule
   metadata:
     creationTimestamp: null
-    name: fed.test
+    name: fed.g1
   spec:
     dlp:
       settings: []
       status: true
     egress:
-    - action: allow
-      applications:
-      - any
-      name: fed.nodes-egress-0
-      ports: any
-      priority: 0
-      selector:
-        comment: ""
-        name: fed.nodes
-        original_name: ""
     - action: deny
       applications:
       - any
-      name: external-egress-1
+      name: external-egress-0
       ports: any
       priority: 0
       selector:
@@ -42,6 +32,54 @@ items:
         - key: container
           op: =
           value: myServer
+        - key: node
+          op: =
+          value: ubuntu*
+        grp_band_width: 0
+        grp_sess_cur: 0
+        grp_sess_rate: 0
+        mon_metric: false
+        name: fed.g1
+        original_name: ""
+    waf:
+      settings: []
+      status: true
+- apiVersion: neuvector.com/v1
+  kind: NvClusterSecurityRule
+  metadata:
+    creationTimestamp: null
+    name: fed.g2
+  spec:
+    dlp:
+      settings: []
+      status: true
+    egress:
+    - action: deny
+      applications:
+      - any
+      name: fed.test-egress-1
+      ports: any
+      priority: 0
+      selector:
+        comment: ""
+        criteria:
+        - key: container
+          op: =
+          value: myServer
+        - key: image
+          op: =
+          value: '*nginx*'
+        name: fed.test
+        original_name: ""
+    file: []
+    ingress: []
+    process: []
+    response: null
+    target:
+      policymode: N/A
+      selector:
+        comment: ""
+        criteria:
         - key: image
           op: =
           value: '*nginx*'
@@ -49,7 +87,7 @@ items:
         grp_sess_cur: 0
         grp_sess_rate: 0
         mon_metric: false
-        name: fed.test
+        name: fed.g2
         original_name: ""
     waf:
       settings: []
