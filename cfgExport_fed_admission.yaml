@@ -14,6 +14,10 @@ spec:
       op: containsAll
       path: annotations
       value: ewrtyrty
+    - name: imageScanned
+      op: =
+      path: imageScanned
+      value: "true"
     disabled: false
     rule_mode: ""
   - action: deny
