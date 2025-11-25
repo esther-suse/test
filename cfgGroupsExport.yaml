@@ -20,9 +20,17 @@ items:
         comment: ""
         name: external
         original_name: ""
-    file: []
+    file:
+    - app: []
+      behavior: monitor_change
+      filter: /tmp/*
+      recursive: false
     ingress: []
-    process: []
+    process:
+    - action: allow
+      allow_update: false
+      name: '*'
+      path: /usr/bin/ls
     response: null
     target:
       policymode: N/A
