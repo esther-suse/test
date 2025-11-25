@@ -14,6 +14,6 @@ spec:
       use_proxy: false
     - enable: true
       name: fed.wh2
-      type: JSON
+      type: Teams
       url: https://aaa123.com
       use_proxy: false
