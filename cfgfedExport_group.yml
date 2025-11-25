@@ -32,6 +32,9 @@ items:
         - key: container
           op: =
           value: myServer
+        - key: node
+          op: =
+          value: ubuntu*
         grp_band_width: 0
         grp_sess_cur: 0
         grp_sess_rate: 0
