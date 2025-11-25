@@ -7,7 +7,7 @@ items:
     name: fed.waf.s1
   spec:
     sensor:
-      comment: ""
+      comment: waf sensor
       name: fed.waf.s1
       rules:
       - name: r1
