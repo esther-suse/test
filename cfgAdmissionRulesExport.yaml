@@ -2,7 +2,7 @@ apiVersion: neuvector.com/v1
 kind: NvAdmissionControlSecurityRule
 metadata:
   creationTimestamp: null
-  name: local
+  name: fed
 spec:
   rules:
   - action: deny
