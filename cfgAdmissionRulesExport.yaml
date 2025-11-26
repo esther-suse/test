@@ -20,25 +20,3 @@ spec:
       value: "true"
     disabled: false
     rule_mode: ""
-  - action: deny
-    containers:
-    - containers
-    conversion_id_ref: 100002
-    criteria:
-    - name: labels
-      op: containsAll
-      path: labels
-      value: testttyt234
-    disabled: false
-    rule_mode: protect
-  - action: deny
-    containers:
-    - containers
-    conversion_id_ref: 100003
-    criteria:
-    - name: imageSigned
-      op: =
-      path: imageSigned
-      value: "false"
-    disabled: false
-    rule_mode: ""
