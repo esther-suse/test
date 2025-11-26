@@ -4,23 +4,17 @@ items:
   kind: NvDlpSecurityRule
   metadata:
     creationTimestamp: null
-    name: fed.dlp.s1
+    name: fed.dlp.s2
   spec:
     sensor:
       comment: ""
-      name: fed.dlp.s1
+      name: fed.dlp.s2
       rules:
-      - name: r2
-        patterns:
-        - context: packet
-          key: pattern
-          op: regex
-          value: eretyuio
       - name: r1
         patterns:
         - context: packet
           key: pattern
           op: regex
-          value: asadsfgdfgfh
+          value: "133445565"
 kind: List
 metadata: {}
