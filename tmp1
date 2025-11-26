@@ -1,0 +1,22 @@
+apiVersion: neuvector.com/v1
+kind: NvAdmissionControlSecurityRule
+metadata:
+  creationTimestamp: null
+  name: local
+spec:
+  rules:
+  - action: deny
+    containers:
+    - containers
+    conversion_id_ref: 100001
+    criteria:
+    - name: annotations
+      op: containsAll
+      path: annotations
+      value: ewrtyrty
+    - name: imageScanned
+      op: =
+      path: imageScanned
+      value: "true"
+    disabled: false
+    rule_mode: ""
