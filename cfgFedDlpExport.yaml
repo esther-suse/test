@@ -4,17 +4,17 @@ items:
   kind: NvDlpSecurityRule
   metadata:
     creationTimestamp: null
-    name: fed.dlp.s2
+    name: fed.test
   spec:
     sensor:
       comment: ""
-      name: fed.dlp.s2
+      name: fed.test
       rules:
       - name: r1
         patterns:
         - context: packet
           key: pattern
           op: regex
-          value: "133445565"
+          value: '[0-9]'
 kind: List
 metadata: {}
