@@ -4,39 +4,17 @@ items:
   kind: NvDlpSecurityRule
   metadata:
     creationTimestamp: null
-    name: fed.dlp.s1
+    name: test
   spec:
     sensor:
       comment: ""
-      name: fed.dlp.s1
+      name: test
       rules:
-      - name: r1
-        patterns:
-        - context: packet
-          key: pattern
-          op: regex
-          value: asadsfgdfgfh
       - name: r2
         patterns:
         - context: packet
           key: pattern
           op: regex
-          value: eretyuio
-- apiVersion: neuvector.com/v1
-  kind: NvDlpSecurityRule
-  metadata:
-    creationTimestamp: null
-    name: fed.dlp.s2
-  spec:
-    sensor:
-      comment: ""
-      name: fed.dlp.s2
-      rules:
-      - name: r1
-        patterns:
-        - context: packet
-          key: pattern
-          op: regex
-          value: "133445565"
+          value: '[0-9]'
 kind: List
 metadata: {}
