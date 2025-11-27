@@ -1,0 +1,14 @@
+apiVersion: neuvector.com/v1
+kind: NvConfigSecurityRule
+metadata:
+  creationTimestamp: null
+  name: fed
+spec:
+  fed_config:
+    name: fed
+    webhooks:
+    - enable: true
+      name: fed.demo
+      type: ""
+      url: http://demo.com
+      use_proxy: false
