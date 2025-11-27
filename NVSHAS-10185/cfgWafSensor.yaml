@@ -1,0 +1,20 @@
+apiVersion: v1
+items:
+- apiVersion: neuvector.com/v1
+  kind: NvWafSecurityRule
+  metadata:
+    creationTimestamp: null
+    name: sensor.spring4shell
+  spec:
+    sensor:
+      comment: Spring4Shell - 0day RCE Vulnerability found in Java Spring Framework
+      name: sensor.spring4shell
+      rules:
+      - name: rule.spring4shell
+        patterns:
+        - context: body
+          key: pattern
+          op: regex
+          value: if.*equals.*request\.getParameter.*pwd.*getRuntime.*exec.*request\.getParameter.*cmd.*getInputStream.*read.*print.*classLoader
+kind: List
+metadata: {}
