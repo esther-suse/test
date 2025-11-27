@@ -1,0 +1,19 @@
+apiVersion: v1
+items:
+- apiVersion: neuvector.com/v1
+  kind: NvResponseRuleSecurityRule
+  metadata:
+    creationTimestamp: null
+    name: fed.security-event--a287e415319e935c1e248c2389361c2279c514132b7373300409edbf7af42814
+  spec:
+    rule:
+      actions:
+      - webhook
+      comment: test
+      conditions:
+      - type: level
+        value: Critical
+      event: security-event
+      policy_name: fed
+kind: List
+metadata: {}
