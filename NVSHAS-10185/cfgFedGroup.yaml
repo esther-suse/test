@@ -1,0 +1,21 @@
+apiVersion: v1
+items:
+- apiVersion: neuvector.com/v1
+  kind: NvClusterSecurityRule
+  metadata:
+    creationTimestamp: null
+    name: fed.nodes
+  spec:
+    egress: []
+    file: []
+    ingress: []
+    process: []
+    response: null
+    target:
+      policymode: N/A
+      selector:
+        comment: ""
+        name: fed.nodes
+        original_name: ""
+kind: List
+metadata: {}
