@@ -1,0 +1,18 @@
+apiVersion: neuvector.com/v1
+kind: NvAdmissionControlSecurityRule
+metadata:
+  creationTimestamp: null
+  name: fed
+spec:
+  rules:
+  - action: deny
+    containers:
+    - containers
+    conversion_id_ref: 100001
+    criteria:
+    - name: allowPrivEscalation
+      op: =
+      path: allowPrivEscalation
+      value: "true"
+    disabled: false
+    rule_mode: ""
