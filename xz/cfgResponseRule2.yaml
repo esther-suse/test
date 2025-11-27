@@ -1,0 +1,19 @@
+apiVersion: v1
+items:
+- apiVersion: neuvector.com/v1
+  kind: NvResponseRuleSecurityRule
+  metadata:
+    creationTimestamp: null
+    name: security-event--8719871d2f07fd9a674f3c78675b1fdae707f0bde044e8d4276d487bab6545a4
+  spec:
+    rule:
+      actions:
+      - webhook
+      conditions:
+      - type: level
+        value: Error
+      disable: true
+      event: security-event
+      policy_name: default
+kind: List
+metadata: {}
