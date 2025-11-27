@@ -1,0 +1,32 @@
+apiVersion: v1
+items:
+- apiVersion: neuvector.com/v1
+  kind: NvWafSecurityRule
+  metadata:
+    creationTimestamp: null
+    name: sensor.s2
+  spec:
+    sensor:
+      comment: comment.s2
+      name: sensor.s2
+      rules:
+      - name: s2.r4
+        patterns:
+        - context: body
+          key: pattern
+          op: regex
+          value: \b3[0-9]{3}(\s|-)?[0-9]{4}(\s|-)?[0-9]{4}(\s|-)?[0-9]{4}\b
+      - name: s2.r5
+        patterns:
+        - context: header
+          key: pattern
+          op: regex
+          value: \b(36|38)[0-9]{2}(\s|-)?[0-9]{6}(\s|-)?[0-9]{4}\b
+      - name: s2.r6
+        patterns:
+        - context: header
+          key: pattern
+          op: regex
+          value: \b6(?:011\d{2}|5\d{4}|4[4-9]\d{3}|22(?:1(?:2[6-9]|[3-9]\d)|[2-8]\d{2}|9(?:[01]\d|2[0-5])))\d{10}\b
+kind: List
+metadata: {}
