@@ -4,13 +4,13 @@ items:
   kind: NvDlpSecurityRule
   metadata:
     creationTimestamp: null
-    name: test
+    name: fed.test
   spec:
     sensor:
       comment: ""
-      name: test
+      name: fed.test
       rules:
-      - name: r2
+      - name: r1
         patterns:
         - context: packet
           key: pattern
