@@ -4,18 +4,12 @@ items:
   kind: NvDlpSecurityRule
   metadata:
     creationTimestamp: null
-    name: fed.sensor-3
+    name: fed.sensor-4
   spec:
     sensor:
       comment: ""
-      name: fed.sensor-3
-      rules:
-      - name: r1
-        patterns:
-        - context: packet
-          key: pattern
-          op: regex
-          value: \b4(\d{3})(?!\1{3})([ -]?)(?!(\d)\3{3})(\d{4})\2(?!\4|(\d)\5{3}|1234|2345|3456|5678|7890)(\d{4})\2(?!\6|(\d)\7{3}|1234|3456)\d{4}\b
+      name: fed.sensor-4
+      rules: []
 - apiVersion: neuvector.com/v1
   kind: NvDlpSecurityRule
   metadata:
@@ -42,5 +36,21 @@ items:
       comment: ""
       name: fed.sensor-2
       rules: []
+- apiVersion: neuvector.com/v1
+  kind: NvDlpSecurityRule
+  metadata:
+    creationTimestamp: null
+    name: fed.sensor-3
+  spec:
+    sensor:
+      comment: ""
+      name: fed.sensor-3
+      rules:
+      - name: r1
+        patterns:
+        - context: packet
+          key: pattern
+          op: regex
+          value: \b4(\d{3})(?!\1{3})([ -]?)(?!(\d)\3{3})(\d{4})\2(?!\4|(\d)\5{3}|1234|2345|3456|5678|7890)(\d{4})\2(?!\6|(\d)\7{3}|1234|3456)\d{4}\b
 kind: List
 metadata: {}
