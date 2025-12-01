@@ -4,6 +4,16 @@ items:
   kind: NvDlpSecurityRule
   metadata:
     creationTimestamp: null
+    name: fed.sensor-2
+  spec:
+    sensor:
+      comment: ""
+      name: fed.sensor-2
+      rules: []
+- apiVersion: neuvector.com/v1
+  kind: NvDlpSecurityRule
+  metadata:
+    creationTimestamp: null
     name: fed.sensor-1
   spec:
     sensor:
