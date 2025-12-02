@@ -1,0 +1,27 @@
+apiVersion: neuvector.com/v1
+kind: NvAdmissionControlSecurityRule
+metadata:
+  creationTimestamp: null
+  name: fed
+spec:
+  rules:
+  - action: allow
+    comment: a exception rule
+    containers:
+    - containers
+    conversion_id_ref: 100001
+    criteria:
+    - name: cveHighCount
+      op: <=
+      value: "74"
+    disabled: false
+  - action: allow
+    comment: a exception rule
+    containers:
+    - containers
+    conversion_id_ref: 100002
+    criteria:
+    - name: cveHighCount
+      op: '>='
+      value: "74"
+    disabled: false
