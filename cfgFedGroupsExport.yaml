@@ -4,54 +4,29 @@ items:
   kind: NvClusterSecurityRule
   metadata:
     creationTimestamp: null
-    name: fed.g1
+    name: fed.iperfserver
   spec:
     dlp:
       settings: []
       status: true
-    egress:
-    - action: deny
-      applications:
-      - any
-      name: external-egress-0
-      ports: any
-      priority: 0
-      selector:
-        comment: ""
-        name: external
-        original_name: ""
-    file:
-    - app: []
-      behavior: monitor_change
-      filter: /tmp/*
-      recursive: false
+    egress: []
+    file: []
     ingress: []
-    process:
-    - action: allow
-      allow_update: false
-      name: '*'
-      path: /usr/bin/ls
-    response:
-    - actions:
-      - suppress-log
-      conditions:
-      - type: level
-        value: Error
-      event: security-event
-      policy_name: fed
+    process: []
+    response: null
     target:
       policymode: N/A
       selector:
         comment: ""
         criteria:
-        - key: container
+        - key: image
           op: =
-          value: myServer
+          value: nginx
         grp_band_width: 0
         grp_sess_cur: 0
         grp_sess_rate: 0
         mon_metric: false
-        name: fed.g1
+        name: fed.iperfserver
         original_name: ""
     waf:
       settings: []
