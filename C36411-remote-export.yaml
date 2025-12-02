@@ -26,6 +26,16 @@ items:
       applications:
       - any
       name: fed.iperfserver-ingress-0
+      ports: tcp/6067
+      priority: 0
+      selector:
+        comment: ""
+        name: external
+        original_name: ""
+    - action: deny
+      applications:
+      - any
+      name: fed.iperfserver-ingress-1
       ports: tcp/6068
       priority: 0
       selector:
