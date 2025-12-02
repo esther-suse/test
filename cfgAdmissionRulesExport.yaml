@@ -2,7 +2,7 @@ apiVersion: neuvector.com/v1
 kind: NvAdmissionControlSecurityRule
 metadata:
   creationTimestamp: null
-  name: local
+  name: fed
 spec:
   rules:
   - action: deny
@@ -10,13 +10,9 @@ spec:
     - containers
     conversion_id_ref: 100001
     criteria:
-    - name: annotations
+    - name: labels
       op: containsAll
-      path: annotations
-      value: ewrtyrty
-    - name: imageScanned
-      op: =
-      path: imageScanned
-      value: "true"
+      path: labels
+      value: gtrghtrh
     disabled: false
     rule_mode: ""
