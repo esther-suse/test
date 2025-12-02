@@ -10,9 +10,9 @@ spec:
     - containers
     conversion_id_ref: 100001
     criteria:
-    - name: allowPrivEscalation
-      op: =
-      path: allowPrivEscalation
-      value: "true"
+    - name: labels
+      op: containsAll
+      path: labels
+      value: gtrghtrh
     disabled: false
     rule_mode: ""
