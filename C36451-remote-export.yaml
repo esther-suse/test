@@ -26,3 +26,14 @@ spec:
       value: test
     disabled: false
     rule_mode: ""
+  - action: deny
+    comment: a deny rule
+    containers:
+    - containers
+    conversion_id_ref: 100003
+    criteria:
+    - name: labels
+      op: containsAny
+      value: test123
+    disabled: false
+    rule_mode: ""
