@@ -10,9 +10,9 @@ spec:
     - containers
     conversion_id_ref: 100001
     criteria:
-    - name: labels
+    - name: annotations
       op: containsAll
-      path: labels
-      value: gtrghtrh
+      path: annotations
+      value: retrytu
     disabled: false
     rule_mode: ""
