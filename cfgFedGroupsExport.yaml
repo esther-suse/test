@@ -4,12 +4,22 @@ items:
   kind: NvClusterSecurityRule
   metadata:
     creationTimestamp: null
-    name: fed.iperfserver
+    name: fed.test
   spec:
     dlp:
       settings: []
       status: true
-    egress: []
+    egress:
+    - action: deny
+      applications:
+      - any
+      name: external-egress-0
+      ports: any
+      priority: 0
+      selector:
+        comment: ""
+        name: external
+        original_name: ""
     file: []
     ingress: []
     process: []
@@ -19,14 +29,14 @@ items:
       selector:
         comment: ""
         criteria:
-        - key: image
+        - key: container
           op: =
-          value: nginx
+          value: myServer
         grp_band_width: 0
         grp_sess_cur: 0
         grp_sess_rate: 0
         mon_metric: false
-        name: fed.iperfserver
+        name: fed.test
         original_name: ""
     waf:
       settings: []
