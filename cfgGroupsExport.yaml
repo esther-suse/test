@@ -1,57 +1,42 @@
 apiVersion: v1
 items:
 - apiVersion: neuvector.com/v1
-  kind: NvSecurityRule
+  kind: NvClusterSecurityRule
   metadata:
     creationTimestamp: null
-    name: nv.cilium-operator.kube-system
-    namespace: kube-system
+    name: fed.test
   spec:
     dlp:
       settings: []
       status: true
-    egress: []
-    file: []
-    ingress:
-    - action: allow
+    egress:
+    - action: deny
       applications:
       - any
-      name: nv.cilium-operator.kube-system-ingress-0
-      ports: tcp/9234
+      name: external-egress-0
+      ports: any
       priority: 0
       selector:
         comment: ""
-        name: nodes
+        name: external
         original_name: ""
-    process:
-    - action: allow
-      allow_update: false
-      name: cilium-operator-generic
-      path: /usr/bin/cilium-operator-generic
-    - action: allow
-      allow_update: false
-      name: pause
-      path: /pause
-    process_profile:
-      baseline: zero-drift
-      mode: Discover
+    file: []
+    ingress: []
+    process: []
     response: null
     target:
-      policymode: Discover
+      policymode: N/A
       selector:
         comment: ""
         criteria:
-        - key: service
+        - key: container
           op: =
-          value: cilium-operator.kube-system
-        - key: domain
-          op: =
-          value: kube-system
+          value: myServer
         grp_band_width: 0
         grp_sess_cur: 0
         grp_sess_rate: 0
         mon_metric: false
-        name: nv.cilium-operator.kube-system
+        name: fed.test
         original_name: ""
     waf:
       settings: []
