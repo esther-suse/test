@@ -28,5 +28,19 @@ items:
         value: error
       event: security-event
       policy_name: fed
+- apiVersion: neuvector.com/v1
+  kind: NvResponseRuleSecurityRule
+  metadata:
+    creationTimestamp: null
+    name: fed.security-event--ec7c6e8676da024bceae4f5f96434d5cfb2b557813ca1485033f4aaddc45a676
+  spec:
+    rule:
+      actions:
+      - suppress-log
+      conditions:
+      - type: level
+        value: notice
+      event: security-event
+      policy_name: fed
 kind: List
 metadata: {}
