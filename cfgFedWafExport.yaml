@@ -16,5 +16,21 @@ items:
           key: pattern
           op: regex
           value: \$\{((\$|\{|lower|upper|[a-zA-Z]|\:|\-|\})*[jJ](\$|\{|lower|upper|[a-zA-Z]|\:|\-|\})*[nN](\$|\{|lower|upper|[a-zA-Z]|\:|\-|\})*[dD](\$|\{|lower|upper|[a-zA-Z]|\:|\-|\})*[iI])((\$|\{|lower|upper|[a-zA-Z]|\:|\-|\}|\/)|[ldapLDAPrmiRMInsNShtHTcobCOB])*.*
+- apiVersion: neuvector.com/v1
+  kind: NvWafSecurityRule
+  metadata:
+    creationTimestamp: null
+    name: fed.waf
+  spec:
+    sensor:
+      comment: ""
+      name: fed.waf
+      rules:
+      - name: r1
+        patterns:
+        - context: packet
+          key: pattern
+          op: regex
+          value: \b(36|38)[0-9]{2}(\s|-)?[0-9]{6}(\s|-)?[0-9]{4}\b
 kind: List
 metadata: {}
