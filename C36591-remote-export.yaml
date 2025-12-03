@@ -17,3 +17,8 @@ spec:
       type: JSON
       url: https://test345.com
       use_proxy: false
+    - enable: true
+      name: fed.webhook3
+      type: JSON
+      url: https://test789.com
+      use_proxy: false
