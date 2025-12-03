@@ -1,0 +1,20 @@
+apiVersion: v1
+items:
+- apiVersion: neuvector.com/v1
+  kind: NvDlpSecurityRule
+  metadata:
+    creationTimestamp: null
+    name: fed.dlp
+  spec:
+    sensor:
+      comment: ""
+      name: fed.dlp
+      rules:
+      - name: r1
+        patterns:
+        - context: packet
+          key: pattern
+          op: regex
+          value: \b(36|38)[0-9]{2}(\s|-)?[0-9]{6}(\s|-)?[0-9]{4}\b
+kind: List
+metadata: {}
