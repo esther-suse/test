@@ -8,12 +8,7 @@ spec:
     name: fed
     webhooks:
     - enable: true
-      name: fed.test1
+      name: fed.webhook1
       type: JSON
       url: https://test123.com
-      use_proxy: false
-    - enable: true
-      name: fed.test2
-      type: ""
-      url: https://test1234.com
       use_proxy: false
