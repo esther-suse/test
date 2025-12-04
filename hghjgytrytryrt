@@ -1,0 +1,18 @@
+apiVersion: v1
+items:
+- apiVersion: neuvector.com/v1
+  kind: NvResponseRuleSecurityRule
+  metadata:
+    creationTimestamp: null
+    name: fed.event--178677d252e3a5e9b9e9568fd5475e80909cb896b72f7a613c59706ad941760b
+  spec:
+    rule:
+      actions:
+      - suppress-log
+      conditions:
+      - type: level
+        value: Alert
+      event: event
+      policy_name: fed
+kind: List
+metadata: {}
