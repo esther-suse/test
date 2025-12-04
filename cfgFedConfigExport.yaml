@@ -10,5 +10,5 @@ spec:
     - enable: true
       name: fed.webhook1
       type: JSON
-      url: https://taest123.com
+      url: https://test123.com
       use_proxy: false
