@@ -1,22 +1,35 @@
-apiVersion: neuvector.com/v1
-kind: NvAdmissionControlSecurityRule
-metadata:
-  creationTimestamp: null
-  name: local
-spec:
-  rules:
-  - action: deny
-    containers:
-    - containers
-    conversion_id_ref: 100001
-    criteria:
-    - name: annotations
-      op: containsAll
-      path: annotations
-      value: ewrtyrty
-    - name: imageScanned
-      op: =
-      path: imageScanned
-      value: "true"
-    disabled: false
-    rule_mode: ""
+apiVersion: v1
+items:
+- apiVersion: neuvector.com/v1
+  kind: NvClusterSecurityRule
+  metadata:
+    creationTimestamp: null
+    name: fed.test
+  spec:
+    dlp:
+      settings: []
+      status: true
+    egress: []
+    file: []
+    ingress: []
+    process: []
+    response: null
+    target:
+      policymode: N/A
+      selector:
+        comment: ""
+        criteria:
+        - key: container
+          op: =
+          value: myServer
+        grp_band_width: 0
+        grp_sess_cur: 0
+        grp_sess_rate: 0
+        mon_metric: false
+        name: fed.test
+        original_name: ""
+    waf:
+      settings: []
+      status: true
+kind: List
+metadata: {}
