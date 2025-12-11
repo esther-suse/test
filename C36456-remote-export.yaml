@@ -1,0 +1,28 @@
+apiVersion: neuvector.com/v1
+kind: NvAdmissionControlSecurityRule
+metadata:
+  creationTimestamp: null
+  name: fed
+spec:
+  rules:
+  - action: allow
+    comment: a exception rule
+    containers:
+    - containers
+    conversion_id_ref: 100001
+    criteria:
+    - name: image
+      op: containsAny
+      value: nvlab/iperf
+    disabled: false
+  - action: deny
+    comment: a deny rule
+    containers:
+    - containers
+    conversion_id_ref: 100002
+    criteria:
+    - name: labels
+      op: containsAny
+      value: test
+    disabled: false
+    rule_mode: ""
