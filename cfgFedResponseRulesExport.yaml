@@ -4,28 +4,14 @@ items:
   kind: NvResponseRuleSecurityRule
   metadata:
     creationTimestamp: null
-    name: fed.event--178677d252e3a5e9b9e9568fd5475e80909cb896b72f7a613c59706ad941760b
+    name: fed.security-event--59cd257f0974272c1002e6e67792c2a6afc5155ddfdf7da52231e277d827f87b
   spec:
     rule:
       actions:
       - suppress-log
       conditions:
       - type: level
-        value: Alert
-      event: event
-      policy_name: fed
-- apiVersion: neuvector.com/v1
-  kind: NvResponseRuleSecurityRule
-  metadata:
-    creationTimestamp: null
-    name: fed.security-event--545da15f48409d2a1f5c79ed0e226498eb2ca876e54bea44e9f522924f152af4
-  spec:
-    rule:
-      actions:
-      - suppress-log
-      conditions:
-      - type: level
-        value: Critical
+        value: Error
       event: security-event
       policy_name: fed
 kind: List
