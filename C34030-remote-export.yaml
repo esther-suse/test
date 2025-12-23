@@ -12,6 +12,11 @@ items:
       - tags:
         - GDPR
         - PCI
+        test_number: D.1.1.1
+      - tags:
+        - GDPR
+        - NIST
+        - PCI
         test_number: D.1.1.10
 kind: List
 metadata: {}
