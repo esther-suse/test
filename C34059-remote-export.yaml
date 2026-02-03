@@ -1,0 +1,19 @@
+apiVersion: neuvector.com/v1
+items:
+- apiVersion: neuvector.com/v1
+  kind: NvVulnerabilityProfile
+  metadata:
+    creationTimestamp: null
+    name: default
+  spec:
+    profile:
+      entries:
+      - comment: CVE-2016-6301 comment
+        days: 0
+        domains:
+        - neuvector-1
+        images:
+        - nvlab/iperf:latest
+        name: CVE-2016-6301
+kind: List
+metadata: {}
