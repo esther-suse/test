@@ -41,7 +41,11 @@ items:
           value: '*'
         name: containers
         original_name: ""
-    process: []
+    process:
+    - action: allow
+      allow_update: false
+      name: iperf
+      path: /usr/bin/iperf
     process_profile:
       baseline: zero-drift
       mode: Discover
