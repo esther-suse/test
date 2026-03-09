@@ -1,0 +1,17 @@
+apiVersion: neuvector.com/v1
+items:
+- apiVersion: neuvector.com/v1
+  kind: NvComplianceProfile
+  metadata:
+    creationTimestamp: null
+    name: default
+  spec:
+    templates:
+      disable_system: false
+      entries:
+      - tags:
+        - GDPR
+        - PCI
+        test_number: D.1.1.10
+kind: List
+metadata: {}
