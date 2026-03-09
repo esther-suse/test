@@ -8,12 +8,12 @@ items:
   spec:
     profile:
       entries:
-      - comment: CVE-2016-6301 comment
+      - comment: CVE-400 comment
         days: 0
         domains:
-        - neuvector-1
+        - ns1
         images:
-        - nvlab/iperf:latest
-        name: CVE-2016-6301
+        - nvlab/http:latest
+        name: CVE-400
 kind: List
 metadata: {}
