@@ -1,0 +1,28 @@
+apiVersion: neuvector.com/v1
+kind: NvAdmissionControlSecurityRule
+metadata:
+  name: local
+spec:
+  rules:
+  - action: allow
+    comment: Allow deployments in NeuVector namespace
+    containers:
+    - containers
+    conversion_id_ref: 2
+    criteria:
+    - name: namespace
+      op: containsAny
+      value: neuvector
+    disabled: false
+    id: 2
+  - action: allow
+    comment: a exception rule
+    containers:
+    - containers
+    conversion_id_ref: 1000
+    criteria:
+    - name: image
+      op: containsAny
+      path: image
+      value: nvlab/iperf
+    disabled: false
