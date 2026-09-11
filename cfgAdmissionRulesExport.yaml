@@ -1,8 +1,7 @@
 apiVersion: neuvector.com/v1
 kind: NvAdmissionControlSecurityRule
 metadata:
-  creationTimestamp: null
-  name: fed
+  name: local
 spec:
   rules:
   - action: deny
@@ -11,8 +10,30 @@ spec:
     conversion_id_ref: 100001
     criteria:
     - name: annotations
-      op: containsAll
+      op: containsAny
       path: annotations
-      value: retrytu
+      value: test
+    disabled: false
+    rule_mode: ""
+  - action: deny
+    containers:
+    - containers
+    conversion_id_ref: 1000
+    criteria:
+    - name: image
+      op: containsAny
+      path: image
+      value: https://quay.io/nvlab/iperf
+    disabled: false
+    rule_mode: ""
+  - action: deny
+    containers:
+    - containers
+    conversion_id_ref: 1001
+    criteria:
+    - name: runAsPrivileged
+      op: =
+      path: runAsPrivileged
+      value: "true"
     disabled: false
     rule_mode: ""
