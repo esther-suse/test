@@ -44,6 +44,10 @@ items:
       allow_update: false
       name: iperf
       path: /usr/bin/iperf
+    - action: allow
+      allow_update: false
+      name: ps
+      path: /bin/busybox
     process_profile:
       baseline: basic
       mode: Discover
