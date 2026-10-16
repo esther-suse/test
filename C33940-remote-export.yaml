@@ -13,7 +13,17 @@ items:
     - action: deny
       applications:
       - any
-      name: containers-egress-0
+      name: external-egress-0
+      ports: any
+      priority: 0
+      selector:
+        comment: ""
+        name: external
+        original_name: ""
+    - action: deny
+      applications:
+      - any
+      name: containers-egress-1
       ports: tcp/6068
       priority: 0
       selector:
